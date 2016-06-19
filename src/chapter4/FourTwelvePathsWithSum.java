@@ -72,7 +72,7 @@ public class FourTwelvePathsWithSum {
 		root.left.right = new TreeNode(8);
 		root.right.left = new TreeNode(2);
 		root.right.right = new TreeNode(6);	
-		System.out.println(countPathsSum(root, 0));
+		System.out.println(countPathSums(root, 0));
 		
 		/*TreeNode root = new TreeNode(-7);
 		root.left = new TreeNode(-7);
