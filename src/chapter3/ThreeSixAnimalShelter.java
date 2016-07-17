@@ -14,23 +14,23 @@ public class ThreeSixAnimalShelter {
 		this.mCatQ = new LinkedList<>();
 	}
 
-	public void enqueue(Animal a) throws Exception {
+	public void enqueue(Animal a) throws IllegalArgumentException {
 
 		if (a instanceof Cat) {
 			this.mCatQ.add((Cat) a);
 		} else if (a instanceof Dog) {
 			this.mDogQ.add((Dog) a);
 		} else {
-			throw new Exception("Shelter cannot accept this animal type.");
+			throw new IllegalArgumentException("Shelter cannot accept this animal type.");
 		}
 
 		this.mShelter.add(a);
 	}
 
-	public Animal dequeueAny() throws Exception {
+	public Animal dequeueAny() throws IllegalStateException {
 
 		if (this.mShelter.size() == 0) {
-			throw new Exception("No Animals in shelter");
+			throw new IllegalStateException("No Animals in shelter");
 		}
 
 		Animal a = this.mShelter.poll();
@@ -45,10 +45,10 @@ public class ThreeSixAnimalShelter {
 		return a;
 	}
 
-	public Dog dequeueDog() throws Exception {
+	public Dog dequeueDog() throws IllegalStateException {
 
 		if (this.mDogQ.size() == 0) {
-			throw new Exception("No dogs in shelter");
+			throw new IllegalStateException("No dogs in shelter");
 		}
 
 		Dog d = this.mDogQ.poll();
@@ -56,10 +56,10 @@ public class ThreeSixAnimalShelter {
 		return d;
 	}
 
-	public Cat dequeueCat() throws Exception {
+	public Cat dequeueCat() throws IllegalStateException {
 
 		if (this.mCatQ.size() == 0) {
-			throw new Exception("No cats in Shelter");
+			throw new IllegalStateException("No cats in Shelter");
 		}
 
 		Cat c = this.mCatQ.poll();
