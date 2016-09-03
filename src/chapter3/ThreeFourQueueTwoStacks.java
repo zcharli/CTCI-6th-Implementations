@@ -15,16 +15,16 @@ public class ThreeFourQueueTwoStacks {
 		mStack = new int[capacity];
 	}
 	
-	public void enqueue(int e) throws Exception {
+	public void enqueue(int e) throws IllegalStateException {
 		if(mSize == mCapacity) {
-			throw new Exception("Stack is full");
+			throw new IllegalStateException("Stack is full");
 		}
 		mStack[mSize++] = e;
 	}
 	
-	public int dequeue() throws Exception {
+	public int dequeue() throws IllegalStateException {
 		if(mSize == 0) {
-			throw new Exception("Nothing was in the queue");
+			throw new IllegalStateException("Nothing was in the queue");
 		}
 		int[] tempStack = new int[mSize];
 		for (int i = 0; i < tempStack.length; i++) {

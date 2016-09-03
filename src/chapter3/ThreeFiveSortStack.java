@@ -14,9 +14,9 @@ public class ThreeFiveSortStack {
 		this.mStack = new int[cap];
 	}
 
-	public void push(int e) throws Exception {
+	public void push(int e) throws IllegalStateException {
 		if(this.mSize == this.mCapacity) {
-			throw new Exception("The stack is already full");
+			throw new IllegalStateException("The stack is already full");
 		}
 		if(this.mSize == 0) {
 			this.mStack[0] = e;
@@ -45,16 +45,16 @@ public class ThreeFiveSortStack {
 		this.mSize += 1;
 	}
 	
-	public int peek() throws Exception {
+	public int peek() throws IllegalStateException {
 		if(this.mSize == 0) {
-			throw new Exception("No elements in the stack");
+			throw new IllegalStateException("No elements in the stack");
 		}
 		return this.mStack[this.mSize - 1];
 	}
 	
-	public int pop() throws Exception {
+	public int pop() throws IllegalStateException {
 		if(this.mSize == 0) {
-			throw new Exception("No elements in the stack");
+			throw new IllegalStateException("No elements in the stack");
 		}
 		int ret = this.mStack[--this.mSize];
 		return ret;

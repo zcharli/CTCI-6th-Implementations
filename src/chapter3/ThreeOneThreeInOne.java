@@ -23,7 +23,7 @@ public class ThreeOneThreeInOne {
 		}
 
 		if (_top[stack] == _capacity[stack]) {
-			throw new ArrayStoreException("Stack " + stack + " is full.");
+			throw new IllegalStateException("Stack " + stack + " is full.");
 		}
 
 		int index = 0;
@@ -39,13 +39,13 @@ public class ThreeOneThreeInOne {
 		_stack[index] = element;
 	}
 
-	public int pop(int stack) throws NoSuchObjectException {
+	public int pop(int stack) throws IllegalStateException {
 		if (stack > 3 || stack < 0) {
 			throw new IllegalArgumentException();
 		}
 
 		if (_top[stack] == -1) {
-			throw new NoSuchObjectException("This stack has nothing in it");
+			throw new IllegalStateException("This stack has nothing in it");
 		}
 
 		int top = _top[stack];
