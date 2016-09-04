@@ -29,7 +29,7 @@ public class EightSevenPermutationUnique {
 	}
 	
 	public static void main(String[] args) {
-		String s = "abcdefgh";
+		String s = "back";
 		ArrayList<String> perms = findPermutations(s, 0);
 		
 		for (int i = 0; i < perms.size(); i++) {

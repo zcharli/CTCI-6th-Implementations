@@ -42,6 +42,5 @@ public class TowerOfHanoi {
         Stack<Integer>[] hanoi = new Stack[]{left, mid, right};
 
         solve(n, 0, 2, 1, hanoi);
-        System.out.println(count);
     }
 }
