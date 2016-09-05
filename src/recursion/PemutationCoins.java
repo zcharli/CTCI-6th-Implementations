@@ -1,9 +1,6 @@
 package recursion;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by czl on 04/09/16.
@@ -68,6 +65,25 @@ public class PemutationCoins {
         return permutations;
     }
 
+    public static <T> List<List<T>> permutationFast(List<T> original) {
+        List<List<T>> permutations = new ArrayList<>();
+        _permutationFast(new ArrayList<>(original), 0, permutations);
+        return permutations;
+    }
+
+    public static <T> void _permutationFast(List<T> original, int startIdx, List<List<T>> permutations) {
+
+        for (int i = startIdx; i < original.size(); i++) {
+            Collections.swap(original, i, startIdx);
+            _permutationFast(original, startIdx + 1, permutations);
+            Collections.swap(original, startIdx, i);
+        }
+
+        if (startIdx == original.size() - 1) {
+            permutations.add(new ArrayList<>(original));
+        }
+    }
+
     public static int countWays(int n) {
         int[][] memo = new int[n + 1][4];
         int[] denom = new int[] {25, 10, 5, 1};
@@ -103,7 +119,29 @@ public class PemutationCoins {
 
     public static void main(String[] args) {
 
-        System.out.println(countWays(98));
+        //System.out.println(countWays(98));
+
+        List<Integer> list = new ArrayList<>();
+
+        int max = 7;
+        for (int i = 0; i < max; i++) {
+            list.add(i);
+        }
+
+        long startTime = System.nanoTime();
+        List<List<Integer>> longest = permutation(list);
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println(String.format("Charlies slow %d in %d ms", longest.size(), duration/1000000));
+
+        long startTime2 = System.nanoTime();
+        List<List<Integer>> longest2 = permutationFast(list);
+        long endTime2 = System.nanoTime();
+        long duration2 = (endTime2 - startTime2);
+        System.out.println(String.format("Charlies fast %d in %d ms", longest2.size(), duration2/1000000));
+
+        System.out.println(longest);
+        System.out.println(longest2);
 
     }
 
