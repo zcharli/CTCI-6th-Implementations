@@ -187,10 +187,15 @@ public class AssortedMethods {
 
 	public static TreeNode randomBST(int N, int min, int max) {
 		int d = randomIntInRange(min, max);
+		System.out.print(d + ",");
 		TreeNode root = new TreeNode(d);
 		for (int i = 1; i < N; i++) {
-			root.insertInOrder(randomIntInRange(min, max));
+			int n = randomIntInRange(min, max);
+			System.out.print(n + ",");
+			root.insertInOrder(n);
 		}
+
+		System.out.println();
 		return root;
 	}
 
