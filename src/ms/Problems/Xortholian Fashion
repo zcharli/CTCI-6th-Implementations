@@ -1,0 +1,701 @@
+Xortholian Fashion
+
+You are a member of the proud Xorthol race, a species whose members choose friends entirely based on their hat collections.
+
+A group of Xortholian freshman have just moved into their dorms and are having trouble finding a best friend. Each refuses to make friends with any Xortholian who owns a hat they find distasteful.
+
+Your task is to find pairs of Xortholians such that each Xortholian in a pair won't find any distasteful hat owned by their new best friend.
+
+Fortunately for you, Xortholians are picky to the point that they'll find most other Xortholians to be distasteful. As a result, they'll go along with the first (and likely only) potential friend they can find. This order is given in the input: the first Xortholian in the list will take the first possible friend in list order, then the second Xortholian will take the first possible friend from the remaining other Xortholians, and so on.
+
+There will always be a solution.
+
+Input definition
+
+Each input file for this problem will contain between 150 and 300 lines (inclusive).
+
+In particular, for each i in 0 <= i <= 50:
+
+Lines 3 * i will have the name of a Xortholian.
+Lines (3 * i) + 1 will contain a space-separated list of adjectives that describe the Xortholian's hats.
+Lines (3 * i) + 2 will contain a space-separated list of adjectives the Xortholian finds distasteful.
+There will be between 50 and 100 triples (inclusive). Each Xortholian will have a unique name.
+
+Output definition
+
+Your output should contain i lines, i.e. one line for each of the given Xortholian names.
+
+Each line should contain a Xortholian's name, a space, and the Xortholian's new best friend's name.
+
+Lines should be alphabetically ordered. Each Xortholian will appear twice: once in their own line as the first name, and once as a new best friend.
+
+Example input
+
+Aba
+soft red
+hard brown
+Bab
+hard orange
+soft violet
+Cen
+thick yellow
+quaint indigo
+D'id
+hard green
+plaid blue
+Example output
+
+Aba Cen
+Bab D'id
+Cen Aba
+D'id Bab
+
+
+
+
+___________
+
+Yag
+pointed amber tattered wet floating light zany elegant plebian spotted crimson inedible tasteless orange smelly
+plebian sparkly diamond tall bronze unusual tubular teal swagtastic floating spotted light funny colorful beige
+Zock
+multicolored tapered indigo crimson tattered evil small blue silent zany amber cute adorable boxy ugly
+silent bronze new dashing evil nautical tasty big tight beautiful gleaming emerald azure cute mithril
+Bayd
+small teal beige poisonous orange blue tattered nautical sparkly funny beautiful adorable silent amber swagtastic
+beige mithril new indigo gold tall elegant ugly diamond glamorous big crimson sparkly beautiful blue
+Veew
+spotted tattered floating tapered cute colorful moist purple smelly boxy tasteless unusual poisonous pointed azure
+tapered gleaming zany tall new smelly light thin colorful gold inedible azure elegant tight emerald
+Qain
+emerald swagtastic small baggy gold indigo plebian beige tubular big circular floating glamorous dashing good
+colorful tasteless tapered teal crimson sparkly beige ugly diamond pink spotted gold boxy adorable inedible
+Wock
+swagtastic orange nautical new thin tall mithril decrepid small silent fuzzy evil gleaming tight pointed
+wet tall pink green silent funny decrepid poisonous sparkly blue zany diamond fuzzy amber olive
+Raiw
+silent blue elegant indigo smelly inedible tattered diamond floating thin adorable tasteless bronze teal beige
+poisonous funny rad beautiful circular blue wet moist swagtastic pointed new green tubular elegant unusual
+Gak
+adorable olive floating big diamond spotted ugly thin boxy zany tight small baggy tasty bronze
+tall decrepid multicolored pink emerald nautical moist funny baggy azure pointed tapered evil amber beautiful
+Kaip
+nautical decrepid tattered zany small wet silent purple smelly multicolored bronze mithril swagtastic good new
+elegant gold adorable dashing smelly pointed crimson tasty tight green gleaming cute wet swagtastic inedible
+Fox
+mithril tasteless poisonous blue nautical moist beautiful tall thin boxy tattered light sparkly azure big
+emerald olive boxy evil pointed rad gleaming dashing fuzzy gold funny baggy indigo tasty tight
+Fayw
+adorable orange sparkly unusual cute tattered pointed pink small plebian emerald blue mithril spotted multicolored
+evil nautical sparkly glamorous orange good multicolored purple tight cute green wet light spotted rad
+Bag
+zany moist indigo thin floating swagtastic diamond emerald fuzzy adorable teal crimson silent gold small
+boxy elegant floating funny light rad inedible bronze fuzzy evil big amber tubular wet dashing
+Layz
+decrepid olive poisonous bronze teal green ugly diamond big beige blue silent azure mithril pink
+beautiful rad moist tubular colorful multicolored pointed poisonous big thin amber indigo smelly pink small
+T'g
+teal nautical light bronze dashing wet decrepid ugly azure orange inedible green baggy blue olive
+moist elegant gleaming good wet inedible rad amber cute zany tattered light tall unusual tight
+Qu'q
+tall silent new floating swagtastic multicolored big dashing zany tasty olive blue inedible moist circular
+bronze emerald rad poisonous green floating plebian beautiful baggy multicolored tight elegant boxy tapered good
+Vec
+spotted smelly wet moist crimson gold colorful zany olive tubular funny tasty light purple tall
+elegant tubular smelly evil ugly light spotted boxy decrepid baggy funny pink small tasteless adorable
+Sayw
+nautical mithril decrepid pointed tasty new cute purple indigo moist emerald funny dashing bronze sparkly
+beautiful tapered bronze colorful swagtastic inedible glamorous pink zany evil good tall emerald light poisonous
+Weh
+new gold purple nautical elegant amber fuzzy ugly tight gleaming unusual baggy decrepid adorable beige
+colorful tapered tubular pink small gleaming tight diamond silent glamorous elegant evil boxy baggy gold
+Han
+beige orange smelly spotted ugly crimson evil new tasty plebian unusual beautiful pink silent tasteless
+wet gleaming new amber tubular pointed thin emerald bronze plebian ugly pink small colorful fuzzy
+Stil
+nautical funny big purple tattered tapered tall light mithril diamond blue adorable poisonous inedible sparkly
+zany purple gleaming nautical emerald dashing inedible elegant multicolored tight rad poisonous indigo azure blue
+Thuz
+pointed amber orange tight ugly silent blue circular sparkly crimson olive tattered good plebian funny
+smelly baggy swagtastic thin beige unusual new azure colorful green evil tapered crimson tasty multicolored
+Kor
+teal orange decrepid ugly tubular light sparkly tattered amber indigo blue elegant diamond silent good
+tall poisonous gold zany nautical cute light tasteless baggy diamond elegant spotted emerald fuzzy teal
+Thav
+gleaming green tasty sparkly ugly rad glamorous beautiful tall tattered smelly dashing azure cute purple
+dashing indigo swagtastic green evil baggy elegant unusual big inedible diamond circular thin spotted emerald
+Tep
+beige beautiful good gold bronze floating boxy tasty zany adorable ugly smelly orange silent crimson
+silent beige olive small diamond mithril tight decrepid circular adorable good nautical funny tapered poisonous
+Quayp
+gold blue boxy new unusual small tattered moist rad big silent glamorous poisonous wet inedible
+pointed new swagtastic cute circular spotted multicolored crimson big ugly thin tasteless bronze silent tasty
+Gayf
+small blue emerald diamond orange good purple tight inedible light teal rad colorful decrepid fuzzy
+funny elegant multicolored pink beautiful emerald tall mithril colorful purple green fuzzy tight swagtastic nautical
+Xip
+purple poisonous olive mithril pointed zany cute evil big smelly new funny floating light rad
+tall tasty smelly baggy teal good beige thin tasteless multicolored funny circular moist purple ugly
+Mith
+dashing blue elegant cute evil floating poisonous zany green fuzzy tattered sparkly small decrepid silent
+adorable wet tapered moist beautiful pink good colorful indigo swagtastic dashing ugly tight beige tasteless
+Leem
+dashing smelly floating fuzzy tubular wet tasty mithril glamorous rad big gleaming tight boxy olive
+small tapered elegant circular dashing purple mithril decrepid adorable thin plebian cute colorful sparkly rad
+K'c
+pink multicolored moist tubular floating boxy unusual gleaming olive smelly gold big glamorous poisonous tall
+pink gold elegant sparkly evil funny diamond spotted inedible cute green thin tattered bronze zany
+Gest
+tubular purple spotted emerald zany ugly inedible azure pink crimson tasteless teal small beige fuzzy
+inedible tight unusual gold tasty dashing ugly multicolored adorable olive spotted diamond green beige tubular
+Mayq
+tapered funny bronze teal nautical poisonous thin amber beautiful gleaming swagtastic fuzzy elegant decrepid big
+multicolored tight boxy pointed nautical olive evil thin new elegant cute green plebian tasty adorable
+Dayf
+bronze multicolored plebian indigo tubular teal mithril inedible emerald fuzzy purple wet crimson glamorous swagtastic
+thin elegant diamond orange rad dashing pink plebian cute spotted blue tight bronze emerald good
+Fick
+beige tattered floating amber pointed tasteless swagtastic fuzzy sparkly small gleaming poisonous tubular tall teal
+light moist pointed tasty good cute green circular rad floating silent zany tattered boxy spotted
+Nul
+smelly evil good moist amber tasty big funny purple diamond teal floating blue new sparkly
+tall cute beige poisonous rad tattered circular gleaming azure thin small big tight floating pointed
+Bec
+orange amber bronze olive emerald teal unusual silent spotted sparkly indigo tasteless moist wet nautical
+wet olive glamorous circular beautiful light pointed azure colorful tall pink boxy cute emerald mithril
+Ckequ
+multicolored silent tight big zany unusual tasty purple beautiful azure crimson good gold boxy small
+emerald decrepid silent mithril tight gleaming tasty orange poisonous tall ugly pink big wet tasteless
+Koqu
+gold cute small dashing beige swagtastic tubular colorful smelly green teal inedible good adorable circular
+plebian rad fuzzy circular tattered teal evil baggy swagtastic adorable nautical indigo olive decrepid spotted
+L't
+swagtastic adorable smelly elegant blue pointed circular diamond small gleaming zany bronze moist tubular dashing
+nautical funny tasty pointed rad blue orange circular sparkly ugly tall swagtastic tight dashing indigo
+Xew
+boxy wet tapered new amber spotted fuzzy beautiful tattered good light gold beige big tasteless
+rad thin amber tapered mithril beige beautiful decrepid light new unusual azure glamorous fuzzy nautical
+Teck
+good gold elegant nautical glamorous tapered crimson unusual moist multicolored beautiful azure ugly emerald evil
+inedible tight glamorous beautiful azure smelly blue orange indigo elegant poisonous zany unusual spotted olive
+Ckeb
+evil tasteless adorable diamond ugly emerald swagtastic fuzzy tubular colorful rad sparkly teal cute bronze
+decrepid poisonous adorable olive tubular zany boxy cute light gleaming amber pointed bronze small purple
+Tuqu
+tattered mithril gleaming green smelly tall sparkly amber funny bronze baggy swagtastic adorable inedible olive
+poisonous good emerald decrepid beige gold teal tattered rad glamorous spotted wet mithril beautiful dashing
+Goc
+tapered tight swagtastic silent moist thin zany plebian sparkly olive adorable azure indigo blue nautical
+moist poisonous thin nautical plebian spotted small beige boxy wet silent good big tubular crimson
+Xayt
+dashing spotted gleaming beautiful purple multicolored mithril sparkly pointed tasteless rad tall small blue orange
+tubular decrepid tight moist small fuzzy circular inedible indigo purple diamond light poisonous azure baggy
+Kem
+swagtastic pointed tall green sparkly tasty emerald colorful cute smelly floating zany tapered bronze teal
+ugly teal poisonous green plebian baggy cute bronze thin fuzzy moist evil amber zany crimson
+Lob
+cute tattered blue swagtastic mithril tall tubular crimson tight indigo decrepid inedible plebian spotted poisonous
+beautiful glamorous moist gleaming new purple diamond spotted elegant funny cute azure orange tubular adorable
+Ckais
+olive poisonous tasty tapered teal boxy thin inedible zany floating silent tight emerald big multicolored
+boxy pink good purple thin elegant funny teal rad wet zany green multicolored unusual pointed
+Quok
+blue big new moist crimson mithril unusual ugly glamorous cute gold beautiful elegant smelly fuzzy
+orange boxy tight zany evil baggy tasty cute big beige diamond swagtastic inedible multicolored unusual
+Xux
+plebian mithril amber circular fuzzy gleaming green smelly rad decrepid olive good tall tattered spotted
+light pointed gleaming swagtastic tubular emerald floating dashing silent spotted small sparkly inedible good baggy
+Vayq
+green tasteless small gold tubular dashing beautiful ugly swagtastic tasty baggy nautical orange new diamond
+circular fuzzy gleaming good tapered small spotted evil glamorous beautiful gold beige funny crimson orange
+Z'x
+floating wet silent new inedible swagtastic emerald nautical thin tasteless pink elegant sparkly boxy big
+adorable colorful tight glamorous decrepid smelly plebian tattered purple tall beige amber good pink light
+Y'r
+colorful moist diamond gold emerald tattered circular amber green tall crimson zany tasteless olive floating
+colorful spotted wet small tasty dashing thin diamond unusual glamorous orange evil bronze decrepid plebian
+Dit
+floating beige adorable tubular smelly olive emerald tapered pointed elegant multicolored purple funny ugly circular
+good bronze boxy silent tapered wet purple light sparkly gleaming multicolored funny elegant fuzzy big
+Kap
+amber tasteless smelly adorable small circular ugly tall evil boxy moist decrepid elegant gleaming tapered
+tubular silent spotted amber tight evil wet circular big tasteless elegant moist gold mithril gleaming
+Caf
+zany decrepid unusual indigo small floating glamorous tapered rad adorable purple diamond baggy crimson nautical
+glamorous light azure mithril fuzzy olive gold unusual inedible poisonous cute dashing pink green colorful
+Saj
+big pink purple ugly diamond emerald plebian dashing tubular decrepid tall unusual poisonous crimson sparkly
+gold wet pointed pink diamond blue tattered tasty silent boxy tall funny small good ugly
+Voc
+nautical dashing evil light fuzzy new adorable mithril azure gleaming big orange thin green bronze
+colorful evil tasteless orange circular funny adorable gleaming inedible blue glamorous tattered baggy thin good
+Ckil
+sparkly small ugly evil spotted bronze fuzzy gleaming tight tubular teal olive nautical elegant funny
+ugly poisonous beautiful green elegant beige fuzzy light inedible olive purple bronze indigo unusual dashing
+Ziw
+adorable moist tight sparkly tattered boxy tubular silent amber colorful mithril tapered pointed tasty gold
+silent mithril poisonous pointed wet baggy plebian purple tasty dashing pink glamorous unusual zany green
+Q'b
+mithril silent good indigo emerald spotted new fuzzy dashing ugly green baggy decrepid rad tattered
+amber unusual gleaming adorable tubular boxy cute baggy circular green beautiful tasteless colorful smelly indigo
+Payc
+swagtastic teal tasty thin emerald olive elegant blue fuzzy silent multicolored pink beige bronze new
+cute zany poisonous purple beautiful evil thin adorable nautical diamond crimson blue circular unusual small
+Sat
+swagtastic baggy gleaming tasteless beautiful multicolored crimson circular good decrepid tight cute thin smelly bronze
+evil smelly multicolored beautiful dashing pointed poisonous colorful circular diamond cute ugly floating azure olive
+Civ
+sparkly fuzzy inedible glamorous rad crimson elegant silent wet thin zany blue tasteless tapered bronze
+rad emerald floating glamorous orange small indigo funny poisonous moist adorable evil tall amber tasty
+Xeeq
+moist pink light teal bronze beautiful circular small olive emerald unusual colorful fuzzy multicolored baggy
+baggy multicolored olive floating smelly colorful diamond blue orange nautical green amber boxy plebian spotted
+Th'b
+tattered crimson tasteless circular sparkly inedible new purple elegant zany rad good thin indigo decrepid
+dashing wet blue gold rad thin tight poisonous zany new funny evil indigo good silent
+Zer
+blue tall plebian light beautiful wet tubular poisonous beige zany green silent tattered small elegant
+light mithril small ugly colorful spotted dashing plebian adorable gleaming green tight inedible multicolored smelly
+Jif
+swagtastic boxy wet olive tasteless decrepid tubular baggy poisonous new tapered glamorous rad elegant teal
+decrepid mithril unusual emerald amber azure cute tasty teal circular spotted diamond bronze fuzzy gold
+Hig
+pink colorful fuzzy purple crimson funny gleaming gold adorable elegant tall swagtastic mithril olive tattered
+gold blue mithril silent rad baggy floating small amber unusual swagtastic wet colorful smelly pink
+Zix
+inedible adorable plebian big tasty good beige thin boxy bronze multicolored glamorous olive moist purple
+unusual evil decrepid tasteless sparkly orange smelly poisonous bronze amber diamond big glamorous silent baggy
+
+
+
+Bag Fayw
+Bayd Veew
+Bec Nul
+Caf Kap
+Civ Sat
+Ckais Lob
+Ckeb Teck
+Ckequ Koqu
+Ckil Ziw
+Dayf Fick
+Dit Y'r
+Fayw Bag
+Fick Dayf
+Fox Kaip
+Gak Raiw
+Gayf Quayp
+Gest Mayq
+Goc Tuqu
+Han Stil
+Hig Zix
+Jif Zer
+Kaip Fox
+Kap Caf
+K'c Leem
+Kem Xayt
+Koqu Ckequ
+Kor Thuz
+Layz T'g
+Leem K'c
+Lob Ckais
+L't Xew
+Mayq Gest
+Mith Xip
+Nul Bec
+Payc Q'b
+Qain Wock
+Q'b Payc
+Quayp Gayf
+Quok Xux
+Qu'q Vec
+Raiw Gak
+Saj Voc
+Sat Civ
+Sayw Weh
+Stil Han
+Teck Ckeb
+Tep Thav
+T'g Layz
+Thav Tep
+Th'b Xeeq
+Thuz Kor
+Tuqu Goc
+Vayq Z'x
+Vec Qu'q
+Veew Bayd
+Voc Saj
+Weh Sayw
+Wock Qain
+Xayt Kem
+Xeeq Th'b
+Xew L't
+Xip Mith
+Xux Quok
+Yag Zock
+Y'r Dit
+Zer Jif
+Ziw Ckil
+Zix Hig
+Zock Yag
+Z'x Vayq
+
+
+__________________
+
+
+Baf
+pointed platinum amber tattered wet floating light zany ruby elegant plebian adamantium spotted crimson inedible tasteless unfunny orange smelly silent
+light emerald mithril quiet unusual smelly thin moist red gold ruby violet silent itchy wet tattered diamond plebian indigo boxy
+Queed
+unfunny tall tapered spotted noisy orange adorable beige tasty glamorous ugly green bourgeoisie dashing multicolored pointed teal circular tasteless beautiful
+bronze new dashing evil heavy nautical tasty big tight beautiful gleaming aquamarine emerald azure cute mithril fuzzy adorable unusual white
+Quim
+swagtastic violet red decrepid tasteless fuzzy diamond blue plebian noisy olive platinum sapphire crimson tubular tall circular loud fluffy beautiful
+beige elegant zany decrepid loud rad baggy emerald heavy quiet tubular funny dashing cute teal unfunny poisonous unusual new boxy
+Sur
+tasteless plebian diamond bronze tapered silent glamorous swagtastic crimson gleaming indigo azure floating evil sapphire orange smelly aquamarine multicolored violet
+aquamarine inedible zany evil tattered orange emerald adorable bronze ruby itchy unfunny bourgeoisie heavy spotted amber multicolored funny light moist
+Nan
+white light adamantium amber green quiet swagtastic baggy plebian tubular rad mithril funny azure orange boxy pink teal sapphire pointed
+tasteless beige poisonous tapered tattered violet unusual teal ruby floating quiet smelly emerald olive inedible noisy plebian purple yellow cute
+D'd
+wet aquamarine green small loud diamond light crimson beautiful fuzzy evil decrepid sparkly elegant red rad tubular baggy adorable heavy
+beige tasty bourgeoisie circular good crimson unfunny thin itchy fluffy nautical noisy ruby elegant yellow floating tight wet diamond fuzzy
+Riv
+dashing tapered big nautical beautiful baggy unusual unfunny bronze funny good new teal poisonous pink quiet colorful crimson inedible violet
+green dashing purple gold red big azure pink floating tattered elegant multicolored wet quiet bronze itchy thin poisonous teal sparkly
+Baiz
+indigo pointed tight tasteless nautical violet cute zany decrepid inedible crimson tapered evil bourgeoisie baggy ruby aquamarine loud good beautiful
+gold emerald beige sapphire fuzzy loud orange spotted elegant tall tattered diamond red glamorous tasty olive small adorable yellow silent
+Biz
+pink smelly inedible azure mithril unfunny boxy white ruby green tubular tight pointed multicolored spotted glamorous zany bourgeoisie violet yellow
+green dashing unusual swagtastic zany gleaming cute light sparkly multicolored azure yellow purple poisonous bourgeoisie orange good fluffy moist violet
+Teez
+tattered colorful crimson aquamarine big new heavy sapphire fuzzy tapered emerald inedible amber blue funny rad tasty olive tall pink
+heavy unusual purple sparkly itchy rad loud tasteless thin indigo beautiful fuzzy amber olive big orange small teal fluffy poisonous
+Tog
+red emerald cute tapered inedible azure poisonous beige indigo spotted aquamarine platinum white small gleaming big diamond colorful pink crimson
+poisonous purple bourgeoisie unfunny cute silent beautiful unusual spotted tall funny heavy orange plebian crimson tasteless zany indigo pink violet
+Rac
+circular emerald white thin green amber baggy tubular new loud bronze mithril gleaming ruby fluffy light small tasty sapphire rad
+baggy light silent blue funny ugly olive tight elegant adorable good mithril tattered unfunny thin rad sparkly dashing new adamantium
+Neg
+fuzzy colorful fluffy orange olive amber heavy poisonous elegant white zany yellow tapered wet silent gleaming loud quiet crimson emerald
+platinum smelly beautiful tall wet tight floating tattered circular fluffy elegant emerald multicolored cute itchy blue tasty boxy pointed green
+Neej
+white unusual unfunny big adorable fuzzy funny loud ugly swagtastic amber bourgeoisie gleaming orange violet ruby sapphire colorful yellow light
+small tight moist pointed teal unusual aquamarine dashing pink noisy tattered light adorable green multicolored platinum purple circular thin indigo
+Reew
+evil unfunny good rad moist orange platinum tasty bourgeoisie glamorous spotted nautical tubular heavy teal emerald cute sapphire plebian elegant
+tapered teal unusual unfunny orange baggy beautiful funny green crimson pink itchy light yellow violet elegant multicolored moist tattered inedible
+Jeex
+noisy ugly pointed adamantium colorful fluffy loud swagtastic bronze evil floating gold plebian silent beige mithril blue bourgeoisie wet heavy
+olive poisonous azure itchy small multicolored funny gold beautiful yellow big indigo dashing circular green tight baggy colorful bronze quiet
+Kaym
+olive bronze bourgeoisie diamond zany tasty thin fluffy blue funny yellow sparkly glamorous unfunny baggy gleaming nautical sapphire pink red
+crimson itchy tasty pointed diamond fluffy thin smelly nautical boxy unusual indigo poisonous amber silent bronze circular violet plebian gold
+Quej
+adorable mithril olive sapphire light floating unfunny white evil aquamarine good decrepid elegant ruby tubular inedible tasteless rad sparkly spotted
+multicolored spotted tasteless tight plebian beautiful ugly swagtastic crimson inedible loud colorful heavy gold emerald boxy beige green white orange
+Queej
+orange tasty yellow green big funny thin fuzzy unusual wet nautical indigo dashing silent inedible violet sparkly adorable sapphire quiet
+unusual mithril ugly baggy nautical elegant quiet funny tattered colorful teal noisy bourgeoisie gleaming olive diamond multicolored wet evil plebian
+Tayy
+small tubular ruby heavy smelly tall itchy platinum inedible silent orange tasteless pink light pointed bronze violet sapphire fuzzy beige
+amber poisonous new tall beige tubular spotted unfunny floating bronze aquamarine diamond tattered gleaming multicolored smelly boxy emerald elegant heavy
+Steeh
+heavy glamorous yellow adorable olive tasty tall smelly tubular inedible colorful plebian pointed circular ruby quiet red floating crimson bourgeoisie
+red small nautical noisy wet dashing poisonous light emerald gold adorable fuzzy crimson good decrepid amber azure bourgeoisie itchy sparkly
+Nayx
+inedible new beautiful diamond loud unfunny elegant swagtastic indigo ruby mithril thin floating circular ugly orange violet colorful evil sapphire
+light evil unusual emerald gleaming azure tasteless multicolored zany silent tight tattered fluffy funny aquamarine thin gold fuzzy amber spotted
+Ruz
+swagtastic loud ruby diamond azure teal red emerald unfunny evil rad beautiful elegant thin unusual small green poisonous fuzzy tall
+teal unfunny purple tubular small moist fuzzy good indigo poisonous pink multicolored gold zany red silent boxy tapered nautical crimson
+Xag
+pointed tattered bronze gleaming big diamond smelly emerald noisy light colorful mithril tasty sparkly decrepid unusual white olive blue funny
+mithril bronze itchy olive yellow sparkly pink boxy tasteless gleaming light spotted floating noisy baggy moist big inedible bourgeoisie tubular
+Ckayqu
+spotted glamorous yellow new purple violet quiet red adorable rad multicolored gold bourgeoisie zany decrepid good evil small white azure
+funny small itchy fluffy pointed thin silent nautical moist azure purple sparkly gold light adamantium unfunny adorable orange zany cute
+Nel
+tapered green decrepid smelly crimson plebian violet tall bourgeoisie pink dashing white inedible loud fuzzy good boxy floating multicolored circular
+sparkly colorful baggy olive thin fuzzy pink tasteless tattered crimson sapphire swagtastic adamantium beige fluffy boxy elegant unfunny dashing tasty
+K'st
+smelly unusual beautiful diamond ugly multicolored circular tasty tattered rad sapphire fuzzy green tasteless dashing itchy evil glamorous indigo floating
+wet inedible tasteless indigo mithril plebian pink adamantium tall floating white zany amber noisy loud bronze funny yellow sparkly azure
+Din
+decrepid new crimson red fluffy unusual light purple rad evil moist gold glamorous olive boxy adorable beige bourgeoisie fuzzy beautiful
+inedible quiet blue light tubular cute decrepid pointed moist mithril tall zany unfunny gleaming heavy boxy crimson adamantium tight baggy
+Reej
+moist baggy glamorous silent beautiful yellow thin colorful fluffy red unfunny good loud tapered elegant decrepid fuzzy amber sparkly plebian
+spotted bronze beautiful cute purple elegant plebian olive ugly unfunny noisy quiet colorful zany smelly emerald indigo ruby tapered sapphire
+Quaz
+new baggy tall thin fuzzy loud floating funny green pointed adorable violet tasty silent poisonous itchy wet multicolored bourgeoisie nautical
+noisy wet azure swagtastic boxy gleaming orange olive circular evil tattered light inedible ruby multicolored cute small emerald unusual nautical
+Mec
+gold mithril baggy moist silent olive glamorous emerald azure wet funny plebian pink pointed decrepid zany purple thin smelly tasteless
+sparkly bourgeoisie boxy nautical spotted tasty small yellow emerald itchy dashing beautiful fluffy light tattered tubular crimson multicolored pink ruby
+Rev
+olive aquamarine colorful diamond quiet new cute loud tight decrepid evil tall tapered beige adorable fuzzy noisy big circular smelly
+big crimson blue elegant circular tasty unfunny beige colorful noisy swagtastic sparkly adamantium ruby tapered nautical beautiful tattered heavy sapphire
+Jem
+quiet tight bronze beautiful itchy plebian multicolored big evil red rad circular pointed tasteless smelly moist tapered gleaming violet tubular
+green silent ruby bronze platinum pink plebian azure good aquamarine blue wet beige tight beautiful teal baggy poisonous tasteless cute
+G'r
+unfunny adorable sparkly funny tapered big bourgeoisie tasty zany crimson smelly glamorous olive evil nautical circular elegant multicolored pointed amber
+new colorful bourgeoisie fluffy yellow thin ruby floating mithril diamond cute baggy funny gold boxy silent azure noisy nautical adamantium
+L'g
+big spotted evil elegant green nautical dashing tattered poisonous mithril bourgeoisie boxy good sparkly platinum tight fluffy white tubular crimson
+pointed zany plebian unusual light inedible rad orange tubular silent gleaming aquamarine evil white gold small noisy big purple platinum
+Jaiz
+poisonous olive tight funny itchy new unfunny circular baggy ugly azure decrepid dashing tattered red quiet tapered multicolored bourgeoisie floating
+gleaming pink fuzzy funny tasty loud red floating itchy ugly zany bronze moist amber azure yellow aquamarine sapphire multicolored light
+Bun
+beige loud baggy orange circular azure gold good swagtastic glamorous smelly itchy beautiful elegant tight multicolored small blue aquamarine light
+blue good glamorous violet baggy amber nautical loud adamantium decrepid itchy multicolored plebian boxy heavy tasty pink indigo tapered olive
+Cayt
+gold ugly fuzzy azure unusual sapphire bourgeoisie inedible smelly orange emerald diamond zany moist aquamarine mithril crimson tasteless floating thin
+violet tasty unusual thin cute adamantium ugly big quiet zany tall rad plebian red indigo crimson adorable tasteless nautical fluffy
+Thux
+heavy poisonous wet quiet adorable tapered elegant green unfunny indigo platinum violet beige decrepid tasteless silent gold funny plebian crimson
+decrepid ugly adamantium inedible small diamond white fuzzy fluffy good pointed yellow tubular sparkly heavy zany green blue red thin
+Fal
+tall new boxy teal emerald adorable indigo glamorous tasteless elegant tattered violet circular noisy unfunny olive baggy rad itchy moist
+loud orange zany colorful tattered new blue fluffy light emerald pointed floating purple glamorous small spotted mithril bronze gleaming dashing
+Vuz
+teal ruby cute orange noisy amber olive rad fuzzy indigo red decrepid ugly baggy violet poisonous colorful boxy diamond bourgeoisie
+gold unfunny diamond multicolored wet beautiful teal tall cute noisy evil inedible pointed ugly rad sapphire boxy circular bronze funny
+Qin
+unusual zany smelly quiet decrepid itchy tubular heavy good light beige colorful olive swagtastic tasteless bourgeoisie spotted elegant thin orange
+zany aquamarine itchy sparkly tubular circular blue white tasty evil thin good small inedible yellow nautical azure sapphire purple light
+Wik
+decrepid indigo inedible adorable nautical colorful wet ruby floating heavy olive unusual unfunny poisonous yellow emerald platinum evil silent smelly
+dashing fluffy moist tubular poisonous thin pink tight teal wet adorable zany swagtastic tapered smelly tasty glamorous quiet gleaming bourgeoisie
+Quar
+tasteless crimson azure amber floating white pointed yellow heavy beautiful diamond tattered platinum sparkly colorful tall purple rad silent big
+itchy white beautiful thin bourgeoisie bronze fluffy tasteless tasty small beige cute crimson rad tall baggy teal pink red ugly
+Tul
+floating rad red pointed beige pink fuzzy indigo swagtastic crimson blue bronze fluffy new bourgeoisie ruby tubular diamond itchy platinum
+tattered red sparkly unfunny itchy poisonous big tasteless inedible beautiful good ugly thin teal indigo pink amber quiet orange yellow
+Xun
+adorable violet evil tapered small floating dashing unusual silent nautical glamorous diamond gold beige bronze white noisy elegant rad tasty
+yellow moist poisonous funny tattered thin mithril light colorful unusual plebian loud tapered violet aquamarine beautiful azure noisy white nautical
+Ck'l
+purple teal fuzzy tasty tall nautical amber gold light azure bronze green orange thin yellow glamorous new crimson tattered quiet
+indigo pointed small gleaming noisy spotted red sparkly thin tubular plebian green unfunny pink teal multicolored crimson tasty sapphire glamorous
+Jeel
+purple bronze adamantium smelly swagtastic cute blue moist unusual violet funny boxy elegant adorable good beautiful new quiet floating circular
+baggy tubular unfunny tasteless olive pointed noisy fluffy itchy emerald circular unusual bourgeoisie decrepid indigo plebian ugly beige violet white
+Dog
+big sparkly good ruby violet beautiful moist dashing plebian adorable evil mithril pink emerald diamond purple smelly boxy wet quiet
+teal plebian crimson nautical multicolored ugly funny evil beige moist sapphire circular new pointed tasty tight inedible violet orange azure
+Ckeem
+small indigo thin aquamarine dashing decrepid fluffy sparkly rad smelly tubular poisonous pink wet olive gold blue spotted bourgeoisie tall
+teal decrepid zany tasty gold heavy new baggy pointed aquamarine amber silent unfunny floating cute bourgeoisie multicolored crimson orange glamorous
+W'th
+azure beige dashing sparkly elegant small noisy adamantium yellow orange tasteless unusual diamond funny glamorous aquamarine wet tall boxy tattered
+inedible quiet elegant smelly tattered sapphire evil loud sparkly circular bourgeoisie adorable tasteless tight wet yellow thin small purple multicolored
+V'b
+ruby tubular tasty decrepid tapered pink adamantium mithril nautical unfunny fuzzy boxy crimson gold emerald swagtastic platinum good big new
+inedible tubular heavy tapered swagtastic floating platinum new moist green plebian pink fuzzy zany beautiful evil bronze ruby good poisonous
+Nah
+tight white platinum colorful quiet light decrepid olive smelly tattered adamantium noisy multicolored thin pink unfunny tubular teal blue adorable
+loud unusual platinum beautiful pink aquamarine funny poisonous baggy bronze tasty diamond adamantium elegant plebian circular good quiet wet rad
+Jef
+gleaming mithril tall beige multicolored spotted moist sapphire inedible small light adorable fluffy pointed yellow bourgeoisie new ruby tubular green
+indigo zany evil silent wet floating amber red elegant inedible good itchy tall ugly beautiful dashing ruby orange heavy plebian
+Ckeen
+olive loud tapered tasty blue noisy quiet poisonous white aquamarine rad red unusual purple bourgeoisie fuzzy beautiful decrepid elegant wet
+aquamarine indigo zany dashing evil plebian good boxy colorful mithril tasty heavy nautical fuzzy tasteless tubular baggy fluffy ruby bourgeoisie
+Lev
+beautiful pink inedible azure swagtastic amber floating thin purple ugly cute noisy new adorable silent big glamorous tapered unfunny light
+adorable gleaming floating smelly new diamond colorful fluffy amber violet sparkly cute tight nautical itchy crimson pink tubular green pointed
+Qam
+yellow nautical circular adorable baggy unusual decrepid swagtastic tasteless beige pink itchy tight ruby smelly olive inedible rad green big
+diamond good funny beige quiet yellow orange thin adorable small circular wet aquamarine amber bourgeoisie poisonous baggy floating multicolored platinum
+Tas
+fluffy inedible green bronze ruby sapphire boxy unfunny adamantium pink swagtastic tight unusual emerald olive tasty beautiful smelly spotted glamorous
+spotted moist sapphire multicolored boxy purple colorful tasty good dashing funny crimson unfunny violet white emerald mithril gleaming amber poisonous
+Zaiq
+plebian indigo platinum smelly beautiful boxy loud violet good bronze ruby new green baggy sparkly itchy elegant sapphire red orange
+new plebian swagtastic adamantium bronze beige tattered glamorous itchy adorable unfunny azure emerald platinum funny nautical tasteless loud silent crimson
+Yayqu
+purple cute gleaming evil elegant smelly teal boxy colorful poisonous fluffy good inedible small red thin orange bourgeoisie rad circular
+tapered diamond moist thin silent wet heavy olive small amber multicolored pointed ugly colorful evil gleaming blue teal circular nautical
+Ckayl
+loud heavy plebian violet white azure sparkly itchy ugly indigo bourgeoisie gleaming tasteless circular adorable beige multicolored colorful swagtastic tight
+thin noisy azure smelly unusual pointed adamantium tubular bronze evil tasty spotted good diamond gold small tight sparkly tattered fuzzy
+Nuq
+emerald tapered decrepid cute light swagtastic orange funny gleaming new itchy tasteless indigo ruby sapphire nautical silent baggy beige pink
+inedible aquamarine small unfunny fluffy good adamantium evil ruby tattered new spotted blue fuzzy funny amber wet teal silent noisy
+Quow
+spotted amber bourgeoisie red pointed quiet ugly sapphire platinum purple multicolored tapered sparkly diamond ruby unfunny cute fuzzy plebian loud
+sparkly thin violet mithril glamorous tight new cute gold wet unusual noisy emerald white smelly tall orange fuzzy inedible dashing
+Zib
+decrepid light aquamarine yellow bourgeoisie adorable azure plebian heavy green indigo circular tapered poisonous ruby unfunny silent olive red sapphire
+noisy adamantium mithril teal new olive light green violet nautical glamorous tubular wet boxy smelly gold itchy moist tall good
+Zayck
+spotted funny bronze bourgeoisie mithril glamorous poisonous big itchy beautiful diamond beige unfunny baggy ruby pink gold green floating thin
+smelly yellow floating fuzzy circular funny loud unusual inedible elegant bronze azure silent decrepid diamond noisy fluffy wet mithril tight
+Hih
+beautiful orange violet itchy purple small bourgeoisie adorable tubular sapphire emerald glamorous red quiet tasty colorful rad unfunny ruby green
+pointed light azure crimson unusual loud ugly adamantium tattered dashing boxy sapphire olive amber smelly elegant blue colorful good new
+Ler
+multicolored unfunny smelly cute good gold sapphire light mithril small white moist emerald wet evil yellow zany spotted ruby bronze
+rad cute beautiful amber adamantium tubular aquamarine teal boxy good diamond gold orange tasteless thin itchy multicolored sapphire nautical tattered
+Ckayf
+unfunny gleaming tapered tasty mithril silent inedible ruby azure swagtastic ugly wet moist white spotted indigo smelly floating bourgeoisie pointed
+indigo violet pink swagtastic funny blue new silent tattered amber adamantium green olive crimson loud adorable tall red tight diamond
+Haiw
+emerald amber purple pink swagtastic adorable mithril ruby tasteless smelly orange tubular heavy multicolored bronze fuzzy thin floating diamond beige
+beige small fuzzy boxy fluffy unfunny plebian pink beautiful zany poisonous moist silent purple cute indigo green nautical emerald inedible
+His
+orange good bronze itchy glamorous crimson mithril light white loud platinum decrepid red sapphire unusual heavy azure tasteless funny noisy
+tight nautical violet crimson beautiful ugly small loud evil quiet fluffy sparkly platinum gold white glamorous pointed teal wet spotted
+W'n
+emerald blue quiet sapphire loud floating pink indigo decrepid purple heavy beige glamorous orange plebian azure tapered inedible diamond adorable
+heavy mithril gleaming elegant tasteless boxy tattered baggy fluffy circular fuzzy orange yellow adamantium evil dashing moist tight tall new
+Jaick
+olive wet beige aquamarine itchy violet loud spotted tasty crimson colorful gold thin funny red cute beautiful indigo sapphire azure
+cute big baggy dashing tattered smelly white poisonous aquamarine unfunny teal moist gleaming good spotted fluffy bourgeoisie ugly violet funny
+Xaij
+orange floating inedible gold new platinum tapered red big nautical white olive evil adorable tight baggy swagtastic tubular heavy emerald
+pointed white nautical beautiful big elegant boxy itchy moist fluffy indigo cute small circular silent aquamarine sparkly azure unfunny tubular
+Staz
+bourgeoisie smelly heavy pink loud poisonous rad floating purple good funny inedible swagtastic multicolored ugly plebian mithril gleaming amber light
+blue bourgeoisie tasty tasteless glamorous mithril ruby plebian sapphire colorful decrepid tall bronze gleaming moist noisy aquamarine purple elegant thin
+Cuqu
+gold boxy floating ugly sapphire good gleaming moist zany wet funny itchy fluffy swagtastic decrepid mithril poisonous adamantium unusual tapered
+tight swagtastic blue teal good tasty evil indigo inedible red plebian emerald poisonous amber ruby purple baggy funny floating mithril
+Sah
+white sapphire tasteless elegant nautical orange noisy new smelly boxy thin heavy azure fluffy violet spotted gleaming sparkly colorful unusual
+glamorous orange pink amber baggy noisy tasty new heavy tall thin azure ruby nautical red elegant platinum beautiful smelly inedible
+Kaist
+thin colorful tasteless adorable gold decrepid big good pink tubular glamorous baggy plebian silent light loud unusual aquamarine white circular
+ugly elegant gold moist nautical unfunny indigo zany small swagtastic bourgeoisie wet plebian mithril platinum colorful sapphire tasteless light unusual
+Zayw
+floating azure emerald quiet big boxy gleaming poisonous dashing good olive pink circular sparkly itchy pointed tattered tapered inedible noisy
+fuzzy yellow sapphire multicolored platinum fluffy emerald swagtastic heavy cute red mithril tight tattered unfunny smelly beige teal itchy dashing
+Ckuj
+light itchy elegant azure smelly violet adamantium crimson decrepid funny floating tight big adorable wet inedible tattered teal bronze diamond
+elegant big adorable emerald boxy swagtastic rad spotted indigo heavy beige pointed poisonous orange zany bronze inedible pink olive fuzzy
+Kuc
+amber diamond unfunny crimson aquamarine beautiful glamorous tight evil nautical loud thin mithril good circular tasty gleaming violet teal baggy
+nautical amber red yellow tapered thin silent baggy tasteless ugly zany circular orange white blue ruby fluffy colorful pointed multicolored
+Quax
+smelly decrepid beige emerald big silent boxy swagtastic olive elegant ruby tasteless sparkly pink unfunny nautical beautiful funny wet sapphire
+purple silent itchy adorable wet unusual new boxy violet baggy adamantium blue decrepid fluffy green plebian glamorous good noisy funny
+Sar
+big elegant inedible heavy ruby azure diamond tasty dashing floating ugly gold moist mithril spotted sapphire gleaming pink red swagtastic
+tall inedible pointed adamantium adorable new yellow amber itchy violet glamorous tapered aquamarine orange zany heavy mithril platinum tight gleaming
+Theec
+tasteless orange loud moist multicolored ugly sapphire platinum spotted floating noisy bronze poisonous gleaming indigo purple tall big blue decrepid
+aquamarine unfunny silent mithril good ruby violet glamorous swagtastic white fuzzy loud blue spotted dashing beautiful gleaming tasteless gold small
+Kath
+big poisonous sparkly moist unusual orange elegant noisy fluffy tapered beige teal olive red colorful tasty nautical thin indigo funny
+silent quiet violet tight new adorable inedible glamorous itchy pointed good light diamond tapered nautical crimson zany beautiful olive circular
+Yeb
+baggy red azure poisonous blue light cute adorable quiet noisy orange swagtastic glamorous inedible elegant amber yellow new olive fuzzy
+floating olive white violet rad baggy tasteless poisonous ruby wet gold green blue adorable sapphire cute tasty indigo light circular
+Saqu
+big aquamarine glamorous beautiful multicolored fluffy crimson small teal dashing pink platinum tight pointed moist nautical noisy bourgeoisie bronze tubular
+colorful itchy circular tall multicolored fluffy teal tattered crimson smelly white decrepid mithril unfunny tubular beige beautiful funny indigo violet
+Kix
+tubular tall tattered itchy aquamarine sparkly fuzzy sapphire mithril beige gold green elegant evil thin ruby azure tapered adamantium colorful
+itchy violet yellow moist white cute aquamarine orange tasty nautical baggy tattered zany tasteless sparkly tight adamantium evil pink smelly
+Num
+adorable good thin swagtastic tapered spotted quiet elegant red fuzzy blue unusual tubular silent gleaming teal loud diamond purple heavy
+fluffy bourgeoisie diamond poisonous swagtastic quiet loud blue rad small zany unusual tasty ugly tight violet good white light platinum
+
+
+
+Baf Queed
+Baiz Riv
+Biz Teez
+Bun Cayt
+Cayt Bun
+Ckayf Ler
+Ckayl Nuq
+Ckayqu Nel
+Ckeem Dog
+Ckeen Lev
+Ck'l Jeel
+Ckuj Kuc
+Cuqu Sah
+D'd Nan
+Din K'st
+Dog Ckeem
+Fal Thux
+G'r Jem
+Haiw His
+Hih Zayck
+His Haiw
+Jaick W'n
+Jaiz L'g
+Jeel Ck'l
+Jeex Reew
+Jef Nah
+Jem G'r
+Kaist Zayw
+Kath Theec
+Kaym Quej
+Kix Num
+K'st Din
+Kuc Ckuj
+Ler Ckayf
+Lev Ckeen
+L'g Jaiz
+Mec Rev
+Nah Jef
+Nan D'd
+Nayx Steeh
+Neej Neg
+Neg Neej
+Nel Ckayqu
+Num Kix
+Nuq Ckayl
+Qam Tas
+Qin Vuz
+Quar Wik
+Quax Sar
+Quaz Reej
+Queed Baf
+Queej Tayy
+Quej Kaym
+Quim Sur
+Quow Zib
+Rac Tog
+Reej Quaz
+Reew Jeex
+Rev Mec
+Riv Baiz
+Ruz Xag
+Sah Cuqu
+Saqu Yeb
+Sar Quax
+Staz Xaij
+Steeh Nayx
+Sur Quim
+Tas Qam
+Tayy Queej
+Teez Biz
+Theec Kath
+Thux Fal
+Tog Rac
+Tul Xun
+V'b W'th
+Vuz Qin
+Wik Quar
+W'n Jaick
+W'th V'b
+Xag Ruz
+Xaij Staz
+Xun Tul
+Yayqu Zaiq
+Yeb Saqu
+Zaiq Yayqu
+Zayck Hih
+Zayw Kaist
+Zib Quow
+
