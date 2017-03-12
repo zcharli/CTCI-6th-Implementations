@@ -9,83 +9,214 @@ public class XorlithianFlightPaths {
 
     public static final int MAXTAKEOFF = 2880;
     public static String endAirport;
-    public static Map<String, FlightCost> memo;
 
     public static class FlightCost {
-        public int timeInAir;
-        public List<String> flights;
-        public int currentTime = 0;
+        private int timeInAir;
+        private List<FlightDetail> flights;
+        private int currentTime = 0;
 
         public FlightCost(int timeInAir) {
-            flights = new ArrayList<>();
-            this.timeInAir = 0;
+            setFlights(new ArrayList<>());
+            this.setTimeInAir(0);
         }
 
         public FlightCost(FlightCost copy) {
-            this.timeInAir = copy.timeInAir;
-            this.currentTime = copy.currentTime;
-            this.flights = new ArrayList<>(copy.flights);
+            this.setTimeInAir(copy.getTimeInAir());
+            this.setCurrentTime(copy.getCurrentTime());
+            this.setFlights(new ArrayList<>(copy.getFlights()));
         }
 
-        public FlightCost(int timeInAir, List<String> path) {
-            flights = path;
-            this.timeInAir = 0;
+        public FlightCost(int timeInAir, List<FlightDetail> path) {
+            setFlights(path);
+            this.setTimeInAir(0);
         }
 
-        public void addFlight(String flight) {
-            flights.add(flight);
+        public void addFlight(FlightDetail flight) {
+            setTimeInAir(getTimeInAir() + flight.getTimeInAir());
+            setCurrentTime(flight.getArrivalTime());
+            getFlights().add(flight);
+        }
+
+        public void mergeCost(FlightCost cost) {
+            getFlights().addAll(cost.getFlights());
+            setTimeInAir(getTimeInAir() + cost.getTimeInAir());
         }
 
         public void addTimeInAir(int time) {
-            timeInAir += time;
+            setTimeInAir(getTimeInAir() + time);
         }
 
-        public String getLastAirport() {
-            return flights.get(flights.size() - 1);
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            sb.append("Time: ").append(currentTime).append(" flied for ").append(timeInAir);
-            return sb.toString();
-        }
-    }
-
-    public static class FlightDetail {
-        public String id;
-        public String departure;
-        public String arrival;
-        public int departureTime;
-        public int arrivalTime;
-        public String airportName;
-
-        public FlightDetail(String i, String depart, String a, int d, int t, String nm) {
-            id = i;
-            arrival = a;
-            departureTime = d;
-            arrivalTime = t;
-            departure = depart;
-            airportName = nm;
+        public FlightDetail getLastAirport() {
+            return getFlights().get(getFlights().size() - 1);
         }
 
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("Flight ").append(id).append(" to ").append(arrival).append(" departing ").append(departureTime).append(" arriving ").append(arrivalTime);
+            sb.append("Time: ").append(getCurrentTime()).append(" flied for ").append(getTimeInAir());
             return sb.toString();
         }
 
         public int getTimeInAir() {
-            return arrivalTime - departureTime;
+            return timeInAir;
         }
+
+        public void setTimeInAir(int timeInAir) {
+            this.timeInAir = timeInAir;
+        }
+
+        public List<FlightDetail> getFlights() {
+            return flights;
+        }
+
+        public void setFlights(List<FlightDetail> flights) {
+            this.flights = flights;
+        }
+
+        public int getCurrentTime() {
+            return currentTime;
+        }
+
+        public void setCurrentTime(int currentTime) {
+            this.currentTime = currentTime;
+        }
+    }
+
+    public static class FlightDetail {
+        private String id;
+        private String departure;
+        private String arrival;
+        private int departureTime;
+        private int arrivalTime;
+        private String airportName;
+
+        public FlightDetail(String i, String depart, String a, int d, int t, String nm) {
+            setId(i);
+            setArrival(a);
+            setDepartureTime(d);
+            setArrivalTime(t);
+            setDeparture(depart);
+            setAirportName(nm);
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Flight ").append(getId()).append(" to ").append(getArrival()).append(" departing ").append(getDepartureTime()).append(" arriving ").append(getArrivalTime());
+            return sb.toString();
+        }
+
+        public int getTimeInAir() {
+            return getArrivalTime() - getDepartureTime();
+        }
+
+        public int getArrivalTime() {
+            return arrivalTime;
+        }
+
+        public int getDepartureTime() {
+            return departureTime;
+        }
+
+        public void setArrivalTime(int arrivalTime) {
+            this.arrivalTime = arrivalTime;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getDeparture() {
+            return departure;
+        }
+
+        public void setDeparture(String departure) {
+            this.departure = departure;
+        }
+
+        public String getArrival() {
+            return arrival;
+        }
+
+        public void setArrival(String arrival) {
+            this.arrival = arrival;
+        }
+
+        public void setDepartureTime(int departureTime) {
+            this.departureTime = departureTime;
+        }
+
+        public String getAirportName() {
+            return airportName;
+        }
+
+        public void setAirportName(String airportName) {
+            this.airportName = airportName;
+        }
+    }
+
+    public static List<String> findLongest(Map<String, TreeSet<FlightDetail>> flights, String currentAirport) {
+        List<String> path = new ArrayList<>();
+
+        FlightCost cost = _findLongest(flights, currentAirport, null, new FlightCost(0));
+
+        for (FlightDetail detail : cost.getFlights()) {
+            path.add(detail.getId());
+        }
+
+        return path;
+    }
+
+    public static FlightCost _findLongest(Map<String, TreeSet<FlightDetail>> flights,
+                                          String currentAirport,
+                                          FlightDetail lastFlightLanding,
+                                          FlightCost currentCost) {
+
+        if (currentCost != null && currentCost.getCurrentTime() >= MAXTAKEOFF) {
+            if (currentAirport.equals(endAirport)) {
+                return currentCost;
+            }
+            return null;
+        }
+
+        SortedSet<FlightDetail> collection = flights.get(currentAirport);
+
+        FlightCost best = null;
+        for (FlightDetail detail : collection) {
+
+            if (lastFlightLanding != null && detail.getDepartureTime() < lastFlightLanding.getArrivalTime()) {
+                continue;
+            }
+
+            FlightCost cost = new FlightCost(0);
+            cost.addFlight(detail);
+            FlightCost newCost = _findLongest(flights, detail.getAirportName(), detail, cost);
+
+            if (newCost == null) {
+                continue;
+            }
+            if (best == null) {
+                best = newCost;
+            } else if (best.getTimeInAir() < newCost.getTimeInAir()) {
+                best = newCost;
+            }
+        }
+
+        if (best != null) {
+            currentCost.mergeCost(best);
+        }
+
+        return currentCost;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         String line = "";
-        List<String> test = new ArrayList<>();
 
         String start = sc.nextLine();
         String dest = sc.nextLine();
@@ -106,21 +237,22 @@ public class XorlithianFlightPaths {
             }
             String[] splitted = line.split(" ");
             if (splitted.length == 1) {
+
                 // new airport
                 currentAirport = splitted[0];
                 if (flightTimes.containsKey(currentAirport)) {
-                    System.out.println("What the fuck");
                     return;
                 }
-                flightTimes.put(currentAirport, new TreeSet<>(new Comparator<FlightDetail>() {
-                    @Override
-                    public int compare(FlightDetail o1, FlightDetail o2) {
-                        if (o1.departureTime == o2.departureTime) {
-                            return 0;
+                flightTimes.put(currentAirport, new TreeSet<>((o1, o2) -> {
+                    if (o1.getDepartureTime() == o2.getDepartureTime()) {
+                        if (o1.getArrivalTime() == o2.getArrivalTime()) {
+                            return -1;
                         }
-                        return o1.departureTime < o2.departureTime ? -1 : 1;
+                        return o1.getArrivalTime() - o2.getArrivalTime();
                     }
+                    return o1.getDepartureTime() - o2.getDepartureTime();
                 }));
+
                 continue;
             }
             String id = splitted[1];
@@ -133,64 +265,10 @@ public class XorlithianFlightPaths {
             flightTimes.get(currentAirport).add(detail);
         }
 
-        memo = new HashMap<>();
-
-//        for (FlightDetail detail : flightTimes.get(currentAirport)) {
-//            List<String> path = new ArrayList<>();
-//            path.add(detail.id);
-//            FlightCost cost = new FlightCost(0, path);
-//            memo.put(detail.id, cost);
-//            findLongest(flightTimes, cost);
-//        }
-
-        FlightCost cost = new FlightCost(0, new ArrayList<>());
-        FlightCost bestCost = findLongest(flightTimes, cost, start);
-
-        for (String id : bestCost.flights) {
+        for (String id : findLongest(flightTimes, start)) {
             System.out.println(id);
         }
+
         System.out.println("done");
-    }
-
-    public static FlightCost findLongest(Map<String, TreeSet<FlightDetail>> flights, FlightCost cost, String currentAirport) {
-        if (cost.currentTime >= MAXTAKEOFF) {
-            // base case
-            if (currentAirport != endAirport) {
-                return null;
-            }
-            return cost;
-        }
-        FlightCost bestCost = null;
-        int currentTime = cost.currentTime;
-        try {
-            for (FlightDetail detail : flights.getOrDefault(currentAirport, new TreeSet<>())) {
-                if (detail.departureTime < currentTime) {
-                    continue;
-                }
-                if (detail.departureTime >= MAXTAKEOFF || (detail.arrivalTime >= MAXTAKEOFF && detail.arrival != endAirport)) {
-                    continue;
-                }
-                FlightCost costOfTravel = new FlightCost(cost);
-                costOfTravel.addFlight(detail.id);
-                costOfTravel.currentTime = detail.arrivalTime;
-                costOfTravel.timeInAir += detail.arrivalTime - detail.departureTime;
-                FlightCost newCost = findLongest(flights, costOfTravel, detail.airportName);
-                if (newCost == null) {
-                    bestCost = costOfTravel;
-                    bestCost.flights.remove(costOfTravel.flights.size() - 1);
-                    continue;
-                }
-                if (bestCost == null) {
-                    bestCost = newCost;
-                }
-                if (newCost.timeInAir > bestCost.timeInAir) {
-                    bestCost = newCost;
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("wtf");
-        }
-
-        return bestCost;
     }
 }
